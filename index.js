@@ -7,12 +7,10 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-mongoose.connect(process.env.MONGO_URI);
-// const users = require("./routes/user");
+mongoose.connect(process.env.MONGO_URI); 
 
-// app.use("/user", users);
-// app.use("/saving", require('./routes/saving'));
-// app.use("/posts", require('./routes/expense'));
+app.use("/user",require("./routes/user"));
+app.use("/posts", require('./routes/employee'));
 app.get("/", (req, res) => {
   res.send("Server is up and running");
 });

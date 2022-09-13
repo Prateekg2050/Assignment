@@ -7,7 +7,7 @@ const Employee = require("../models/employee");
 const verifyAuth = require("../middlewares/auth");
 const { json } = require("express");
 
-router.post("/", verifyAuth, async (req, res) => {
+router.post("/", async (req, res) => {
   // res.send(req.user._id);
 
   try {
@@ -35,28 +35,28 @@ router.get("/", verifyAuth, async (req, res) => {
   try {
     // const user=await User.findOne(req.user._id)
     // req.user._id
-    const employee = await Employee.find({ user: req.user._id });
+    const employee = await Employee.find();
 
-    res.json(expenses);
+    res.json(employee);
   } catch (err) {
     console.log(err.message);
     res.status(500).send("Server error");
   }
 });
 
-router.delete("/:id", verifyAuth, async (req, res) => {
-  // res.send(req.user._id);
+// router.delete("/:id", verifyAuth, async (req, res) => {
+//   // res.send(req.user._id);
 
-  try {
-    const exp = await Employee.findById(req.params.id);
-    // req.user._id
-    // const expenses = await Expense.find({user:req.user._id});
-    emp.remove();
-    res.json({ msg: "Expense removed" });
-  } catch (err) {
-    console.log(err.message);
-    res.status(500).send("Server error");
-  }
-});
+//   try {
+//     const exp = await Employee.findById(req.params.id);
+//     // req.user._id
+//     // const expenses = await Expense.find({user:req.user._id});
+//     emp.remove();
+//     res.json({ msg: "Expense removed" });
+//   } catch (err) {
+//     console.log(err.message);
+//     res.status(500).send("Server error");
+//   }
+// });
 
 module.exports = router;
