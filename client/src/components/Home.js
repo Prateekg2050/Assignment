@@ -29,8 +29,8 @@ const Home = () => {
       });
   }, []);
 
-  if(!localStorage.getItem("token"))
-  {
+  // if(!localStorage.getItem("token"))
+  // {
     return (
         <>
           <div className=" bg-bg-back1 h-screen">
@@ -67,15 +67,15 @@ const Home = () => {
           </div>
         </>
       );
-  }
+  // }
 
-  return(
-    <div>
-        <h1>Hello User</h1>
-        {toggle?<AddEmployee/>:null}
-        <button onClick={() => {setToggle(!toggle)}}>Add Employee</button>
-    </div>
-  )
+  // return(
+  //   <div>
+  //       <h1>Hello User</h1>
+  //       {toggle?<AddEmployee/>:null}
+  //       <button onClick={() => {setToggle(!toggle)}}>Add Employee</button>
+  //   </div>
+  // )
 };
 
 export default Home;

@@ -8,7 +8,6 @@ import Register from "./Register";
 import ProtectedRoutes from "./ProtectedRoutes";
 import Dashboard from "./Dashboard";
 import AddEmployee from "./AddEmployee";
-import Navbar from "./Navbar";
 
 const App = () => {
   const dispatch = useDispatch();
@@ -21,7 +20,7 @@ const App = () => {
   return (
     <>
       <div className="App">
-        <Navbar/>
+       
         <Routes>
         <Route element={<ProtectedRoutes />}>
 

@@ -2,6 +2,7 @@ import { Icon } from "@iconify/react";
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
+import Navbar from "./Navbar";
 
 import { Link } from "react-router-dom";
 import { server_url } from "../config";
@@ -39,18 +40,19 @@ function Dashboard() {
   return (
 
     <div className="">
-    <div id="main" className="mt-10">
+    <div id="main" className="">
+      <Navbar/>
       <div
         id="nav"
-        className="m-10 space-x-2  flex flex-row  w-3/2 font-semibold text-lg justify-between align-baseline text-gray-600"
+        className="m-10 space-x-2  flex flex-col  w-3/2 font-semibold text-lg  align-baseline text-gray-600"
       >
-
-        <Link to={"/dashboard/addemp"}>
+        <div className="w-fit"><Link to={"/dashboard/addemp"}>
           {" "}
           <div className=" bg-blue-400 rounded-lg  p-4 text-white hover:bg-blue-500 shadow-lg">
             Add Employee
           </div>
-        </Link>
+        </Link></div>
+        
         <div>
         {Data1.length === 0 ? (
           () => {

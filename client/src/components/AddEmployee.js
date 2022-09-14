@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import { server_url } from "../config";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import Navbar from "./Navbar";
 
 function AddEmployee() {
   const auth = useSelector((state) => state.auth);
@@ -35,6 +36,8 @@ function AddEmployee() {
   }, [call]);
 
   return (
+    <div>
+      <Navbar/>
       <div className="h-fit w-1/2 m-auto shadow-md rounded-3xl p-10 flex flex-col justify-start bg-[#acdffa]">
         <div className=" text-lg font-bold self-center">Add Employee</div>
 
@@ -123,6 +126,7 @@ function AddEmployee() {
             submit
           </button>
         </div>
+      </div>
       </div>
   );
 }
