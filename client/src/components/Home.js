@@ -29,7 +29,7 @@ const Home = () => {
       });
   }, []);
 
-  if(localStorage.getItem("token"))
+  if(!localStorage.getItem("token"))
   {
     return (
         <>
