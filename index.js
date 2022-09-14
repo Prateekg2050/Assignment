@@ -10,7 +10,7 @@ app.use(express.json());
 mongoose.connect(process.env.MONGO_URI); 
 
 app.use("/user",require("./routes/user"));
-app.use("/posts", require('./routes/employee'));
+app.use("/employee", require('./routes/employee'));
 app.get("/", (req, res) => {
   res.send("Server is up and running");
 });
