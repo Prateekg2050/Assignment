@@ -44,19 +44,18 @@ router.get("/", verifyAuth, async (req, res) => {
   }
 });
 
-// router.delete("/:id", verifyAuth, async (req, res) => {
-//   // res.send(req.user._id);
-
-//   try {
-//     const exp = await Employee.findById(req.params.id);
-//     // req.user._id
-//     // const expenses = await Expense.find({user:req.user._id});
-//     emp.remove();
-//     res.json({ msg: "Expense removed" });
-//   } catch (err) {
-//     console.log(err.message);
-//     res.status(500).send("Server error");
-//   }
-// });
+router.delete("/:id",verifyAuth, async (req, res) => {
+  // res.send(req.user._id);
+  try {
+    const emp = await Employee.findById(req.params.id);
+    // req.user._id
+    // const expenses = await Expense.find({user:req.user._id});
+    emp.remove();
+    res.json({ msg: "Expense removed" });
+  } catch (err) {
+    console.log(err.message);
+    res.status(500).send("Server error");
+  }
+});
 
 module.exports = router;
